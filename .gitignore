@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+.env
+reports/*
+screenshots/*
+artifacts/*
+!artifacts/.gitkeep
+data/*
+!.gitkeep
+*.log
+.DS_Store

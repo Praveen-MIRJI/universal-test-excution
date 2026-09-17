@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "universal-test-execution": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["dist/mcp/server.js"]
+    }
+  }
+}

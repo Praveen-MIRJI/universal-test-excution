@@ -1,0 +1,46 @@
+{
+  "name": "universal-test-execution",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Autonomous MCP-based universal test execution engine",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "node -e \"import('node:fs/promises').then(({ rm }) => rm('dist', { recursive: true, force: true }))\"",
+    "dev": "tsx watch src/mcp/server.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "schema:generate": "npm run build && node scripts/generate-execution-model-schema.mjs",
+    "start": "node dist/mcp/server.js",
+    "start:agent": "node dist/index.js",
+    "start:ui": "node dist/ui/ui-server.js",
+    "dev:agent": "tsx src/index.ts",
+    "dev:ui": "tsx src/ui/ui-server.ts",
+    "test": "vitest run",
+    "test:orangehrm": "cross-env RUN_ORANGEHRM_INTEGRATION=1 vitest run tests/integration/orangehrm-login.test.ts",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/client": "^2.0.0",
+    "@modelcontextprotocol/server": "^2.0.0",
+    "playwright": "^1.63.0",
+    "zod": "^4.6.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@types/node": "^24.3.0",
+    "cross-env": "^10.0.0",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.42.0",
+    "vitest": "^3.2.4"
+  }
+}

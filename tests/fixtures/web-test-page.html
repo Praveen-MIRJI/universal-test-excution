@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Web Adapter Fixture</title>
+  </head>
+  <body>
+    <main>
+      <h1>Test form</h1>
+      <label>
+        Username
+        <input id="username" name="username" placeholder="Username" />
+      </label>
+      <label>
+        Department
+        <select id="department" name="department">
+          <option value="engineering">Engineering</option>
+          <option value="finance">Finance</option>
+        </select>
+      </label>
+      <button type="button" id="submit">Submit</button>
+      <p id="result" hidden>Submitted successfully</p>
+    </main>
+    <script>
+      document.querySelector('#submit').addEventListener('click', () => {
+        document.querySelector('#result').hidden = false;
+      });
+    </script>
+  </body>
+</html>

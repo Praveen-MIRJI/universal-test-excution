@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Runroom | Universal Test Execution</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Runroom home">
+          <span class="brand-mark"><span></span><span></span><span></span></span>
+          <span>RUNROOM</span>
+        </a>
+        <div class="topbar-meta"><span class="live-dot"></span><span>LOCAL EXECUTION GRID</span><span class="slash">/</span><span id="connection-state">READY</span></div>
+      </header>
+
+      <main>
+        <section class="hero-row">
+          <div>
+            <p class="eyebrow">UNIVERSAL TEST EXECUTION</p>
+            <h1>Turn a real website into a<br /><em>living test run.</em></h1>
+            <p class="hero-copy">Point the browser at a live URL, describe the journey in executable JSON, and watch every layer report back in one room.</p>
+          </div>
+          <div class="hero-stamp"><span>WEB</span><strong>01</strong><small>PLAYWRIGHT<br />ADAPTER</small></div>
+        </section>
+
+        <section class="workspace-grid">
+          <aside class="control-panel panel">
+            <div class="panel-heading"><span class="section-number">01</span><div><p class="eyebrow">RUN CONFIGURATION</p><h2>Set the scene</h2></div></div>
+            <form id="run-form">
+              <label for="website-url">Website URL <span>required</span></label>
+              <div class="url-field"><span>https://</span><input id="website-url" name="url" type="url" placeholder="example.com" value="https://example.com" required /></div>
+              <div class="label-line"><label for="test-cases">Test cases <span>JSON array</span></label><button type="button" class="text-button" id="load-example">LOAD EXAMPLE</button></div>
+              <textarea id="test-cases" name="testCases" spellcheck="false" required></textarea>
+              <div class="input-help"><span class="tiny-grid"></span><span>Semantic targets keep tests portable across UI changes.</span></div>
+              <button class="run-button" type="submit"><span class="button-icon">&#9654;</span><span id="run-label">RUN ALL TESTS</span><span class="button-arrow">&#8599;</span></button>
+            </form>
+            <div class="engine-note"><span class="pulse-ring"></span><div><strong>REAL BROWSER ENGINE</strong><p>Playwright runs headless on the execution server.</p></div></div>
+          </aside>
+
+          <section class="results-column">
+            <div class="results-header"><div><p class="eyebrow">EXECUTION BOARD</p><h2 id="run-title">Awaiting a run</h2></div><div class="run-badge" id="run-status">STANDBY</div></div>
+            <div class="metrics-row">
+              <article class="metric-card accent"><span>CASES PASSED</span><strong id="passed-cases">--</strong><small id="passed-cases-note">run to calculate</small></article>
+              <article class="metric-card"><span>STEPS EXECUTED</span><strong id="total-steps">--</strong><small id="total-steps-note">across all cases</small></article>
+              <article class="metric-card"><span>RUNTIME</span><strong id="runtime">--</strong><small>server duration</small></article>
+            </div>
+            <div class="visual-grid">
+              <article class="panel chart-panel"><div class="card-topline"><div><p class="eyebrow">CASE HEALTH</p><h3>Pass / fail profile</h3></div><span class="mini-legend"><i class="swatch pass"></i>passed <i class="swatch fail"></i>failed</span></div><div id="case-chart" class="case-chart empty-state"><span>Run your first suite to see the profile.</span></div></article>
+              <article class="panel donut-panel"><p class="eyebrow">RUN HEALTH</p><div id="health-donut" class="health-donut"><div><strong id="health-percent">--</strong><span>PASS RATE</span></div></div><div class="donut-key"><span><i class="swatch pass"></i><b id="donut-passed">0</b> passed</span><span><i class="swatch fail"></i><b id="donut-failed">0</b> failed</span></div></article>
+            </div>
+            <article class="panel case-panel"><div class="card-topline"><div><p class="eyebrow">CASE RESULTS</p><h3>Every journey, accounted for</h3></div><span id="case-count">0 CASES</span></div><div id="case-list" class="case-list empty-list"><p>No execution data yet.</p></div></article>
+          </section>
+
+          <aside class="panel chat-panel"><div class="chat-header"><div><p class="eyebrow">EXECUTION CHAT</p><h2>Layer by layer</h2></div><span class="chat-live"><i></i> LIVE FEED</span></div><div id="chat-feed" class="chat-feed"><div class="chat-message system"><span class="chat-avatar">R</span><div><small>RUNROOM / SYSTEM</small><p>Ready when you are. Your browser run will appear here as each layer completes.</p></div></div></div><div class="chat-footer"><span class="chat-status-dot"></span><span id="chat-footer-text">Awaiting execution input</span></div></aside>
+        </section>
+      </main>
+      <footer><span>RUNROOM  /  UNIVERSAL TEST EXECUTION</span><span>WEB ADAPTER <b>ONLINE</b>  &middot;  EVIDENCE <b>ON</b>  &middot;  HEADLESS <b>ON</b></span></footer>
+    </div>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

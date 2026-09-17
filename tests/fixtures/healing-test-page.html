@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Healing Fixture</title>
+  </head>
+  <body>
+    <main>
+      <h1>Sign in</h1>
+      <button type="button" id="login">Log in</button>
+      <p id="result" hidden>Welcome</p>
+    </main>
+    <script>
+      document.querySelector('#login').addEventListener('click', () => {
+        document.querySelector('#result').hidden = false;
+      });
+    </script>
+  </body>
+</html>
